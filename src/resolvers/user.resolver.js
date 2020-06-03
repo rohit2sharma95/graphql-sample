@@ -1,10 +1,12 @@
 const { UserService } = require('../services');
-const { authenticate } = require('../../utils');
+const { authenticate, validateRole } = require('../utils');
 
 module.exports = {
   Query: {
     user: authenticate((_, args, context) => UserService.getById(args, context)),
-    allUsers: authenticate((_, args, context) => UserService.getAll(args, context))
+    allUsers: authenticate(
+      validateRole('Admin')((_, args, context) => UserService.getAll(args, context))
+    )
   },
   Mutation: {
     createUser: (_, args, context) => UserService.create(args, context),

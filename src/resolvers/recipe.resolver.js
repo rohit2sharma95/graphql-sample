@@ -1,5 +1,5 @@
 const { RecipeService } = require('../services');
-const { authenticate } = require('../../utils');
+const { authenticate } = require('../utils');
 
 module.exports = {
   Query: {

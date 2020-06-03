@@ -45,6 +45,7 @@ module.exports = gql`
       email: String!
       phoneNumber: String
       gender: String
+      imagePath: String
       addressLine1: String
       addressLine2: String
     ): User!

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { uploadFile } = require('../../utils');
+const { uploadFile } = require('../utils');
 
 router.post(
   '/upload-many-files',

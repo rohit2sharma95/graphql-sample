@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const { UserService } = require('../src/services');
+const { UserService } = require('../services');
 
 module.exports = {
   getUserFromToken: async (token, models) => {
     try {
       const { id } = jwt.verify(token, process.env.JWT_KEY);
-      return await UserService.getById({ id }, { models });
+      return id ? await UserService.getById({ id }, { models }) : null;
     } catch (error) {
       return null;
     }

@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const schema = require('./src/schema');
 const { models, sequelize } = require('./models');
-const { getUserFromToken } = require('./utils');
+const { getUserFromToken } = require('./src/utils');
 const api = require('./src/apis');
 require('dotenv').config();
 
