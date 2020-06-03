@@ -1,4 +1,4 @@
-const Constants = require('../lib/constants');
+const Constants = require('../src/lib/constants');
 
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('Users', {
