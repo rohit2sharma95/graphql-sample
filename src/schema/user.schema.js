@@ -9,6 +9,7 @@ module.exports = gql`
     id: Int!
     firstName: String!
     lastName: String
+    fullName: String!
     email: String!
     phoneNumber:String
     gender: String!

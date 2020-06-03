@@ -11,6 +11,7 @@ module.exports = {
     updateUser: authenticate((_, args, context) => UserService.updateById(args, context))
   },
   User: {
+    fullName: ({ firstName, lastName }) => `${firstName} ${lastName}`.trim(),
     recipes: (user) => user.getRecipes()
   }
 };

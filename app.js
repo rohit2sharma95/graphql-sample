@@ -1,12 +1,20 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const bodyParser = require('body-parser');
+const path = require('path');
 const schema = require('./src/schema');
 const { models, sequelize } = require('./models');
 const { getUserFromToken } = require('./utils');
+const api = require('./src/apis');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use('/api', api);
+app.use('/images/', express.static(path.join(__dirname, '/assets/images')));
 
 const server = new ApolloServer({
   schema,

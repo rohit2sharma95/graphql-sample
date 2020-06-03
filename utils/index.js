@@ -3,9 +3,14 @@ const {
   getUserFromToken,
   validateRole
 } = require('./auth');
+const { uploadFile } = require('./multer');
 
 module.exports = {
+  // from auth
   authenticate,
   getUserFromToken,
-  validateRole
+  validateRole,
+
+  // form multer
+  uploadFile
 };
