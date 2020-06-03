@@ -1,9 +1,11 @@
 const {
   authenticate,
-  getUserFromToken
+  getUserFromToken,
+  validateRole
 } = require('./auth');
 
 module.exports = {
   authenticate,
-  getUserFromToken
+  getUserFromToken,
+  validateRole
 };
